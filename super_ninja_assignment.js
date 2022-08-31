@@ -24,6 +24,25 @@ class Ninja {
     }
 }
 
-const ninja1 = new Ninja("Hyabusa");
-ninja1.sayName();
-ninja1.showStats();
+// const ninja1 = new Ninja("Hyabusa");
+// ninja1.sayName();
+// ninja1.showStats();
+
+class superSensei extends Ninja{
+    constructor(name){
+        super(name);
+    this.health = 200;
+    this.speed = 10;
+    this.wisdom = 10;
+    }
+
+    speakWisdom(){
+        this.drinkSake();
+        console.log("What one programmer can do in one month, two programmers can do in two months.")
+    }
+
+}
+
+const superSensei1 = new superSensei("Master Splinter");
+superSensei1.speakWisdom();
+superSensei1.showStats();
