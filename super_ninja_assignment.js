@@ -33,6 +33,7 @@ class superSensei extends Ninja{
         super(name);
     this.health = 200;
     this.speed = 10;
+    this.strength = 10;
     this.wisdom = 10;
     }
 
