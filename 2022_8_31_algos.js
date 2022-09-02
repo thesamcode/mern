@@ -94,16 +94,17 @@ const expectedSort = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * @param {Array<number>} nums
  * @returns {Array<number>} A New sorted array.
  */
-function mergeSort(nums = []) {
-    let midVal = Math.floor(nums.length / 2);
-    let rightArray = nums.splice(midVal);
-    // console.log(rightArray, "right side");
-    // console.log(nums, "left side");
-    // console.log(midVal)
-    while(rightArray.length > 1 && nums.length > 1){
 
-    }
-}
+// function mergeSort(nums = []) {
+//     let midVal = Math.floor(nums.length / 2);
+//     let rightArray = nums.splice(midVal);
+//     // console.log(rightArray, "right side");
+//     // console.log(nums, "left side");
+//     // console.log(midVal)
+//     while(rightArray.length > 1 && nums.length > 1){
+
+//     }
+// }
 
 
 function mergeSort(nums = []){
