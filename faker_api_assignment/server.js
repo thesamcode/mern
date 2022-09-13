@@ -41,7 +41,6 @@ const createCompany = () => {
 const newCompany = createCompany();
 console.log(newCompany);
 
-
 /*
  * The output of the above console log will look like this
  * {
@@ -58,7 +57,8 @@ app.post("/api/users/new", (req, res) => {
     // later on this will be inserted into a database
     users.push(req.body.createUser());
     // we always need to respond with something
-    res.json( { status: "ok" } );
+    // res.json( { status: "ok" } );
+    res.status("ok")
 });
 
 app.get("/api/users/new", (req, res) => {
@@ -67,33 +67,31 @@ app.get("/api/users/new", (req, res) => {
 });
 
 app.post("/api/companies/new", (req, res) => {
-    // req.body will contain the form data from Postman or from React
     console.log(req.body.createCompany());
-    // we can push it into the users array for now...
-    // later on this will be inserted into a database
     companies.push(req.body.createCompany());
-    // we always need to respond with something
-    res.json( { status: "ok" } );
+    res.status("ok")
 });
 
 app.get("/api/companies/new", (req, res) => {
-    // res.json({ message: "Hello World" });
     res.json( newCompany );
 });
 
 app.post("/api/user/company", (req, res) => {
-    // req.body will contain the form data from Postman or from React
     console.log(req.body.createCompany(), req.body.createUser());
-    // we can push it into the users array for now...
-    // later on this will be inserted into a database
     companies.push(req.body.createCompany());
     users.push(req.body.createUser());
-    // we always need to respond with something
-    res.json( { status: "ok" } );
+    // res.json( { status: "ok" } );
+    res.status("ok")
 });
 
+// app.use((err, req, res, next) => {
+//     res.locals.error = err;
+//     const status = err.status || 500;
+//     res.status(status);
+//     res.render('error');
+//   });
+
 app.get("/api/user/company", (req, res) => {
-    // res.json({ message: "Hello World" });
     // res.json( newCompany );
     res.json( newCompany, newUser );
 });
