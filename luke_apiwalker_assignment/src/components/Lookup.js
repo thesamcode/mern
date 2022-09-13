@@ -23,24 +23,27 @@ const Lookup = (props) => {
             })
             // .then(response => { console.log(response.data.results)})
             .catch(err => console.log(err))
+
     }, [category, id]);
 
     return (
         <div>
 
-            <h1>{result.name}</h1>
-
             {
                 isHuman ?
                 
                 <div>
+                    <h1>{result.name}</h1>
                     <p>Height: {result.height}</p>
                     <p>Mass: {result.mass}</p>
                     <p>Hair Color: {result.hair_color}</p>
                     <p>Skin Color: {result.skin_color}</p>
                 </div>
 
-                : <div>
+                : 
+
+                <div>
+                    <h1>{result.name}</h1>
                     <p>Climate: {result.climate}</p>
                     <p>Terrain: {result.terrain}</p>
                     <p>Surface Water: {result.surface_water}</p>
@@ -50,7 +53,6 @@ const Lookup = (props) => {
         </div>
 
     );
-
 
 }
 
