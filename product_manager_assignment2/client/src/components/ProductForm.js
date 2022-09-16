@@ -2,7 +2,8 @@
 import React, {useState} from 'react';
 
 import axios from 'axios';
-import e from 'express';
+// this line below get's auto added. get rid of it!!!!
+// import e from 'express';
 
 // export default props => {
     export default () => {
@@ -27,18 +28,18 @@ import e from 'express';
         <form onSubmit={onSubmitHandler}>
             <p>
                 <label>Title: </label>
-                {/* <input type="text" onChange={e=>setTitle(e.target.value)}/> */}
-                <input type="text" onChange={(e)=>setTitle(e.target.value)} value={title}/>
+                <input type="text" onChange={e=>setTitle(e.target.value)}/>
+                {/* <input type="text" onChange={(e)=>setTitle(e.target.value)} value={title}/> */}
             </p>
             <p>
                 <label>Price: </label>
-                {/* <input type="number" onChange={e=>setPrice(e.target.value)}/> */}
-                <input type="number" onChange={(e)=>setPrice(e.target.value)} value={price}/>
+                <input type="number" onChange={e=>setPrice(e.target.value)}/>
+                {/* <input type="number" onChange={(e)=>setPrice(e.target.value)} value={price}/> */}
             </p>
             <p>
                 <label>Description: </label>
-                {/* <input type="text" onChange={e=>setDescription(e.target.value)}/> */}
-                <input type="text" onChange={(e)=>setDescription(e.target.value)} value={description}/>
+                <input type="text" onChange={e=>setDescription(e.target.value)}/>
+                {/* <input type="text" onChange={(e)=>setDescription(e.target.value)} value={description}/> */}
             </p>
             <input type="submit"/>
         </form>
