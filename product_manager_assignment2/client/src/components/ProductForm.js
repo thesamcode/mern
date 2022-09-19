@@ -6,7 +6,7 @@ import axios from 'axios';
 // import e from 'express';
 
 // export default props => {
-    export default () => {
+export default () => {
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState();
     const [description, setDescription] = useState("");
@@ -26,6 +26,7 @@ import axios from 'axios';
 
     return (
         <form onSubmit={onSubmitHandler}>
+            <h1>Product Manager</h1>
             <p>
                 <label>Title: </label>
                 <input type="text" onChange={e=>setTitle(e.target.value)}/>
