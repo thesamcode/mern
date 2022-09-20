@@ -74,8 +74,9 @@ import DeleteButton from '../components/DeleteButton';
 
 
 const Update = (props) => {
-    const { id } = props;
-    const [product, setProduct] = useState();
+    // use params is what takes the value from the url to put into here
+    const { id } = useParams();
+    const [product, setProduct] = useState(null);
     const [loaded, setLoaded] = useState(false);
 
     const navigate = useNavigate();
@@ -86,6 +87,7 @@ const Update = (props) => {
                 setProduct(res.data);
                 setLoaded(true);
             })
+            
     }, []);
 
     const updateProduct = product => {

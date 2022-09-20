@@ -26,6 +26,8 @@ module.exports.getAllProducts = (request, response) => {
 module.exports.getProduct = (request, response) => {
     Product.findOne({_id:request.params.id})
         .then(product => response.json(product))
+        // .catch(err => response.status(400).json(err))
+        // put the above line in all the catches in this conroller file so they will respond with errors in a readable way on the front end
         .catch(err => response.json(err))
 }
 

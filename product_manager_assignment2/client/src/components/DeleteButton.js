@@ -9,7 +9,8 @@ export default props => {
     const deleteProduct = e => {
         axios.delete('http://localhost:8000/api/products/' + productId)
             .then(res=>{
-                successCallback();
+                // successCallback();
+                props.removeFromDom(productId)
             })
     }
     

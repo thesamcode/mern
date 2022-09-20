@@ -44,16 +44,17 @@ import DeleteButton from './DeleteButton';
 
 const ProductList = (props) => {
 
-    const [products, setProducts] = useState([]);
+    // const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-        axios.get('http://localhost:8000/api/products')
-            .then(res => setProducts(res.data));
-    }, [])
+    // useEffect(() => {
+    //     axios.get('http://localhost:8000/api/products')
+    //         .then(res => setProducts(res.data));
+    // }, [])
 
-    const removeFromDom = productId => {
-        setProducts(products.filter(product => product._id !== productId))
-    }
+    // const removeFromDom = productId => {
+    //     setProducts(products.filter(product => product._id !== productId))
+    //     console.log(productId)
+    // }
 
     return (
         <div>
@@ -64,7 +65,7 @@ const ProductList = (props) => {
                         {product.title}
                     </Link>
                     <span> | </span>
-                    <DeleteButton productId={product._id} successCallback={()=>removeFromDom(product._id)}/>
+                    <DeleteButton productId={product._id} removeFromDom={props.removeFromDom}/>
                 </p>
             })}
         </div>
